@@ -23,6 +23,7 @@ export const fetchCountries = (name, url, filtr) => {
                 countrySearchList.innerHTML = '';
 
                 if ((countryData.length <= 10) && (countryData.length >= 2)) {
+                    countryInfo.innerHTML = '';
                     for (const country of countryData) {
                         countrySearchList.innerHTML += `<li><img src=${country.flag}> ${country.name}</li>`;
                     }
