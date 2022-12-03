@@ -8,6 +8,7 @@ export const fetchCountries = (name, url, filtr) => {
 
     if (name == '') {
         countrySearchList.innerHTML = '';
+        countryInfo.innerHTML = '';
     } else {
         fetch(url + name + filtr)
             .then(val => {
