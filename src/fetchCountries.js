@@ -47,7 +47,7 @@ export const fetchCountries = (name, url, filtr) => {
                     }
                     countryInfo.innerHTML = `<div class="container"><div class="country-box"><img class = "country-bigflag" src=${lastCountry.flag}><span class="country-name">${countryData[0].name}</span></div> 
                 <div class="country"><span class = "country-data">Capital:</span><span class = "country-values capital">${lastCountry.capital}<span></div>
-                <div class="country"><span class = "country-data">Populaton:</span><span class = "country-values">${population}<span></div>
+                <div class="country"><span class = "country-data">Population:</span><span class = "country-values">${population}<span></div>
                 <div class="country"><span class = "country-data">Languages:</span><span class = "country-values">${languages}<span></div></div>`;
                 }
                 if ((countryData.length > 10)) {
