@@ -18,24 +18,19 @@ countryName.addEventListener("input", debounce(() => {
     nameOfCountry = (countryName.value).trim();
     //console.log(nameOfCountry);
     if (list != null) {
-        console.log("OKOKOK");
         list.addEventListener("click", (even) => {
             const listEl = even.target;
-            // even.target
-            const nameOfchoise = listEl//.childNodes[1]
-            //console.log("kliknięto w liste", nameOfchoise);
-
-            //even.stopPropagation();
-           // console.log(list.childNodes)
+            const nameOfchoise = listEl;
+            even.stopPropagation();
+            // console.log(list.childNodes)
             countryName.value = nameOfchoise.innerText;
             nameOfCountry = (countryName.value).trim();
             fetchCountries(nameOfCountry, url, filtr);
         });
     }
 
-    // list.children
     fetchCountries(nameOfCountry, url, filtr);
-    console.log(list.childElementCount);
+    // console.log(list.childElementCount);
 }, DEBOUNCE_DELAY));
 
 

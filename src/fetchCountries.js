@@ -1,6 +1,7 @@
 import { Notify } from 'notiflix';
 const countrySearchList = document.querySelector(".country-list");
 const countryInfo = document.querySelector(".country-info")
+const numbersOfCountries = document.querySelector(".inputs-quantity")
 
 
 export const fetchCountries = (name, url, filtr) => {
@@ -25,10 +26,11 @@ export const fetchCountries = (name, url, filtr) => {
                 //console.log(countryData);
                 if ((countryData.length <= 10) && (countryData.length >= 2)) {
                     countryInfo.innerHTML = '';
+                    numbersOfCountries.innerHTML = '';
                     for (const country of countryData) {
                         countrySearchList.innerHTML += `<li><img src=${country.flag}>${country.name}</li>`;
                     }
-                    console.log("Ilosć na liście",countrySearchList.childElementCount)
+                    console.log("Ilosć na liście", countrySearchList.childElementCount)
                 }
                 if ((countryData.length == 1)) {
                     const lastCountry = countryData[0];
@@ -52,6 +54,7 @@ export const fetchCountries = (name, url, filtr) => {
                 }
                 if ((countryData.length > 10)) {
                     countryInfo.innerHTML = '';
+                    numbersOfCountries.innerHTML = `countries found: ${countryData.length}`;
                     Notify.info("Too many matches found. Please enter a more specific name.");
                 }
 
