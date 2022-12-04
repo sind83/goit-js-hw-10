@@ -15,7 +15,8 @@ let nameOfCountry;
 //console.log(nameOfCountry);
 
 countryName.addEventListener("input", debounce(() => {
-    nameOfCountry = (countryName.value).trim();
+    countryName.value = (countryName.value.replace(/\W|\d/g, ''))
+    nameOfCountry = ((countryName.value).trim());
     //console.log(nameOfCountry);
     filtr = '?fields=capital,population,languages,name,flag';
     if (list != null) {
