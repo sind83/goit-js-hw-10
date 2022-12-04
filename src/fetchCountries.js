@@ -16,7 +16,7 @@ export const fetchCountries = (name, url, filtr) => {
                 if (val.status >= 400) {
                     countrySearchList.innerHTML = '';
                     countryInfo.innerHTML = '';
-                    err = new Error('takie to to ')
+                    err = new Error();
                 }
                 else {
                     return val.json()
