@@ -32,6 +32,7 @@ export const fetchCountries = (name, url, filtr) => {
                     }
                 }
                 if ((countryData.length == 1)) {
+                    numbersOfCountries.innerHTML = ``;
                     const lastCountry = countryData[0];
                     let languages = [];
                     let population = '';
