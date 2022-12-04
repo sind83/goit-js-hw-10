@@ -4,7 +4,7 @@ import { fetchCountries } from './fetchCountries';
 
 const DEBOUNCE_DELAY = 300;
 const url = "https://restcountries.com/v2/name/";
-const filtr = '?fields=capital,population,languages,name,flag';
+let filtr;
 //const filtr = '?fields=';
 // const url = "https://restcountries.com/v2/name/peru"
 
@@ -17,6 +17,7 @@ let nameOfCountry;
 countryName.addEventListener("input", debounce(() => {
     nameOfCountry = (countryName.value).trim();
     //console.log(nameOfCountry);
+    filtr = '?fields=capital,population,languages,name,flag';
     if (list != null) {
         list.addEventListener("click", (even) => {
             const listEl = even.target;
@@ -25,6 +26,7 @@ countryName.addEventListener("input", debounce(() => {
             // console.log(list.childNodes)
             countryName.value = nameOfchoise.innerText;
             nameOfCountry = (countryName.value).trim();
+            filtr = '?fullText=true';
             fetchCountries(nameOfCountry, url, filtr);
         });
     }
