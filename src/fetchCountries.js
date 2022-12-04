@@ -22,13 +22,13 @@ export const fetchCountries = (name, url, filtr) => {
                 }
             }).then(countryData => {
                 countrySearchList.innerHTML = '';
-
+                //console.log(countryData);
                 if ((countryData.length <= 10) && (countryData.length >= 2)) {
                     countryInfo.innerHTML = '';
                     for (const country of countryData) {
-                        countrySearchList.innerHTML += `<li><img src=${country.flag}> ${country.name}</li>`;
+                        countrySearchList.innerHTML += `<li><img src=${country.flag}>${country.name}</li>`;
                     }
-
+                    console.log("Ilosć na liście",countrySearchList.childElementCount)
                 }
                 if ((countryData.length == 1)) {
                     const lastCountry = countryData[0];
@@ -66,3 +66,4 @@ export const fetchCountries = (name, url, filtr) => {
 
     }
 }
+

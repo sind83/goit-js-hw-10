@@ -31,6 +31,10 @@ li{
   list-style: none;
   margin-bottom: 15px;
 }
+li:hover{
+  background-color: rgb(223, 248, 242);
+  cursor: pointer;
+}
 img{
   padding: 3px;
   width: 30px;
