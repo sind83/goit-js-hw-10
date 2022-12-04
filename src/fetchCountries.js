@@ -62,6 +62,7 @@ export const fetchCountries = (name, url, filtr) => {
             .catch(err => {
                 //console.error(err);
                 if (name != '') {
+                    numbersOfCountries.innerHTML = ``;
                     Notify.failure("Oops, there is no country with that name")
                 }
             });
