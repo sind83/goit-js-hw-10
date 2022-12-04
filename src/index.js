@@ -23,10 +23,10 @@ countryName.addEventListener("input", debounce(() => {
             const listEl = even.target;
             // even.target
             const nameOfchoise = listEl//.childNodes[1]
-            console.log("kliknięto w liste", nameOfchoise);
+            //console.log("kliknięto w liste", nameOfchoise);
 
             //even.stopPropagation();
-            console.log(list.childNodes)
+           // console.log(list.childNodes)
             countryName.value = nameOfchoise.innerText;
             nameOfCountry = (countryName.value).trim();
             fetchCountries(nameOfCountry, url, filtr);
