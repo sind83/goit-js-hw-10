@@ -1,7 +1,7 @@
 import { Notify } from 'notiflix';
 const countrySearchList = document.querySelector(".country-list");
 const countryInfo = document.querySelector(".country-info")
-const numbersOfCountries = document.querySelector(".inputs-quantity")
+export const numbersOfCountries = document.querySelector(".inputs-quantity")
 
 
 export const fetchCountries = (name, url, filtr) => {
@@ -10,6 +10,7 @@ export const fetchCountries = (name, url, filtr) => {
     if (name == '') {
         countrySearchList.innerHTML = '';
         countryInfo.innerHTML = '';
+        numbersOfCountries.innerHTML = ``;
     } else {
         fetch(url + name + filtr)
             .then(val => {
@@ -56,12 +57,13 @@ export const fetchCountries = (name, url, filtr) => {
                     countryInfo.innerHTML = '';
                     numbersOfCountries.innerHTML = `countries found: ${countryData.length}`;
                     Notify.info("Too many matches found. Please enter a more specific name.");
-                }
+                } 
 
             })
 
             .catch(err => {
                 //console.error(err);
+
                 if (name != '') {
                     numbersOfCountries.innerHTML = ``;
                     Notify.failure("Oops, there is no country with that name")
