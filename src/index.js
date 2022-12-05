@@ -15,7 +15,7 @@ const list = document.querySelector('ul');
 
 let nameOfCountry;
 //console.log(nameOfCountry);
-const reg = /\d|\W|_/gi;
+const reg = /^-| {2,}|[^\w\d\- ]|\-{2,}| \-{1,}|\-{1,} {1,}/gi;
 
 countryName.addEventListener("input", debounce(() => {
     const test = reg.test(countryName.value);
@@ -23,7 +23,7 @@ countryName.addEventListener("input", debounce(() => {
         numbersOfCountries.innerHTML = ``;
     }
     if (test) {
-        Notify.warning("Please use only letters.");
+        Notify.warning("Please use only letters, and no doubled space and '-' ");
         countryName.value = (countryName.value.replace(reg, ''))
     } else {
 
